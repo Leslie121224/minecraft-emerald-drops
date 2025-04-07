@@ -17,9 +17,9 @@ import java.util.*;
 public class PlayerTouchEntityHandler {
     private static final Random random = new Random();
 
-    // Cooldown 機制：每位玩家最多每 2 秒觸發一次
+    // Cooldown 機制：每位玩家最多每 1 秒觸發一次
     private static final Map<UUID, Long> cooldownMap = new HashMap<>();
-    private static final long COOLDOWN_TICKS = 40; // 2 秒（20 ticks = 1 秒）
+    private static final long COOLDOWN_TICKS = 20; // 1 秒（20 ticks = 1 秒）
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
@@ -60,10 +60,10 @@ public class PlayerTouchEntityHandler {
             new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 15 * 20),
             new MobEffectInstance(MobEffects.WATER_BREATHING, 15 * 20),
             new MobEffectInstance(MobEffects.POISON, 15 * 20),
-            new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 15 * 20), // ← 替代 SLOWNESS
+            new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 15 * 20),
             new MobEffectInstance(MobEffects.BLINDNESS, 15 * 20),
             new MobEffectInstance(MobEffects.WEAKNESS, 15 * 20),
-            new MobEffectInstance(MobEffects.CONFUSION, 15 * 20) // ← 替代 CONFUSION
+            new MobEffectInstance(MobEffects.CONFUSION, 15 * 20)
         );
 
         MobEffectInstance effect = effects.get(random.nextInt(effects.size()));
