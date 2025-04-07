@@ -18,11 +18,11 @@ license="MIT"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId="emeraldmod" #mandatory
+modId="cursedtouch" #mandatory
 # The version number of the mod
 version="1.0.0" #mandatory
 # A display name for the mod
-displayName="Emerald Drop Mod" #mandatory
+displayName="Mob Cursed Touch" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -43,10 +43,10 @@ authors="Leslie121224" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-這個模組讓所有敵對生物在死亡時掉落綠寶石！
+這個模組讓玩家靠近所有生物半格內範圍時會隨機得到一個藥水效果！(1秒冷卻)
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.emeraldmod]] #optional
+[[dependencies.cursedtouch]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -60,7 +60,7 @@ description='''
     # Side this dependency is applied on - BOTH, CLIENT, or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.emeraldmod]]
+[[dependencies.cursedtouch]]
     modId="minecraft"
     mandatory=true
     # This version range declares a minimum of the current minecraft version up to but not including the next major version

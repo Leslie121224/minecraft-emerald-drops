@@ -1,4 +1,4 @@
-package com.example.emeraldmod;
+package com.leslie1212.cursedtouch;
 
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
