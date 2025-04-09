@@ -6,10 +6,12 @@ import net.minecraftforge.fml.common.Mod;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.core.Holder;
 
 import java.util.*;
 
@@ -53,20 +55,42 @@ public class PlayerTouchEntityHandler {
     }
 
     private static void applyRandomPotion(Player player) {
-        List<MobEffectInstance> effects = Arrays.asList(
-            new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 15 * 20),
-            new MobEffectInstance(MobEffects.JUMP, 15 * 20),
-            new MobEffectInstance(MobEffects.REGENERATION, 15 * 20),
-            new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 15 * 20),
-            new MobEffectInstance(MobEffects.WATER_BREATHING, 15 * 20),
-            new MobEffectInstance(MobEffects.POISON, 15 * 20),
-            new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 15 * 20),
-            new MobEffectInstance(MobEffects.BLINDNESS, 15 * 20),
-            new MobEffectInstance(MobEffects.WEAKNESS, 15 * 20),
-            new MobEffectInstance(MobEffects.CONFUSION, 15 * 20)
+        List<Holder<MobEffect>> allEffects = Arrays.asList(
+            MobEffects.ABSORPTION,
+            MobEffects.BAD_OMEN,
+            MobEffects.CONDUIT_POWER,
+            MobEffects.DOLPHINS_GRACE,
+            MobEffects.FIRE_RESISTANCE,
+            MobEffects.GLOWING,
+            MobEffects.HEALTH_BOOST,
+            MobEffects.HERO_OF_THE_VILLAGE,
+            MobEffects.INVISIBILITY,
+            MobEffects.JUMP,
+            MobEffects.LEVITATION,
+            MobEffects.LUCK,
+            MobEffects.MOVEMENT_SPEED,
+            MobEffects.NIGHT_VISION,
+            MobEffects.REGENERATION,
+            MobEffects.DAMAGE_RESISTANCE,
+            MobEffects.SATURATION,
+            MobEffects.SLOW_FALLING,
+            MobEffects.WATER_BREATHING,
+    
+            MobEffects.BLINDNESS,
+            MobEffects.CONFUSION,
+            MobEffects.DARKNESS,
+            MobEffects.HUNGER,
+            MobEffects.DIG_SLOWDOWN,
+            MobEffects.MOVEMENT_SLOWDOWN,
+            MobEffects.POISON,
+            MobEffects.UNLUCK,
+            MobEffects.WEAKNESS,
+            MobEffects.WITHER
         );
+    
+        Holder<MobEffect> effect = allEffects.get(random.nextInt(allEffects.size()));
+        player.addEffect(new MobEffectInstance(effect, 15 * 20));
 
-        MobEffectInstance effect = effects.get(random.nextInt(effects.size()));
-        player.addEffect(effect);
     }
+    
 }
