@@ -15,11 +15,53 @@ public class Randomizer {
     private static final Random random = new Random();
 
     private static final Item[] TOOLS = {
-        Items.WOODEN_SWORD, Items.STONE_SWORD, Items.IRON_SWORD, Items.DIAMOND_SWORD, Items.NETHERITE_SWORD,
-        Items.WOODEN_AXE, Items.STONE_AXE, Items.IRON_AXE, Items.DIAMOND_AXE,
-        Items.IRON_PICKAXE, Items.DIAMOND_HOE, Items.FLINT_AND_STEEL, Items.CROSSBOW,
-        Items.BOW, Items.TRIDENT, Items.STICK, Items.SHIELD
+        // 劍類（全材質）
+        Items.WOODEN_SWORD, Items.STONE_SWORD, Items.IRON_SWORD,
+        Items.GOLDEN_SWORD, Items.DIAMOND_SWORD, Items.NETHERITE_SWORD,
+    
+        // 斧頭（全材質）
+        Items.WOODEN_AXE, Items.STONE_AXE, Items.IRON_AXE,
+        Items.GOLDEN_AXE, Items.DIAMOND_AXE, Items.NETHERITE_AXE,
+    
+        // 鏟子（全材質）
+        Items.WOODEN_SHOVEL, Items.STONE_SHOVEL, Items.IRON_SHOVEL,
+        Items.GOLDEN_SHOVEL, Items.DIAMOND_SHOVEL, Items.NETHERITE_SHOVEL,
+    
+        // 鎬子（全材質）
+        Items.WOODEN_PICKAXE, Items.STONE_PICKAXE, Items.IRON_PICKAXE,
+        Items.GOLDEN_PICKAXE, Items.DIAMOND_PICKAXE, Items.NETHERITE_PICKAXE,
+    
+        // 鋤頭（全材質）
+        Items.WOODEN_HOE, Items.STONE_HOE, Items.IRON_HOE,
+        Items.GOLDEN_HOE, Items.DIAMOND_HOE, Items.NETHERITE_HOE,
+    
+        // 遠程武器
+        Items.BOW, Items.CROSSBOW, Items.TRIDENT,
+    
+        // 實用工具
+        Items.SHIELD,
+        Items.FLINT_AND_STEEL,
+        Items.FISHING_ROD,
+        Items.SHEARS,
+        Items.COMPASS,
+        Items.CLOCK,
+        Items.LEAD,
+        Items.SPYGLASS,
+        Items.NAME_TAG,
+    
+        // 裝飾與搞笑道具
+        Items.STICK,
+        Items.BRUSH,
+        Items.TOTEM_OF_UNDYING,
+        Items.SADDLE,
+        Items.CARROT_ON_A_STICK,
+        Items.WARPED_FUNGUS_ON_A_STICK,
+    
+        // 新版本實用類（如 1.20+ 新增）
+        Items.BUNDLE,
+        Items.RECOVERY_COMPASS
     };
+    
 
     public static void replaceInventory(ServerPlayer player) {
         // 清除裝備欄
