@@ -18,11 +18,11 @@ license="MIT"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId="chaosgear" #mandatory
+modId="nomoveexplode" #mandatory
 # The version number of the mod
-version="1.1.0" #mandatory
+version="1.0.0" #mandatory
 # A display name for the mod
-displayName="Chaos Gear" #mandatory
+displayName="Move or Explode" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -43,10 +43,10 @@ authors="Leslie121224" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Every 15 seconds, your gear and tools are replaced with random stuff. 每 15 秒，你的裝備和武器工具會全部被隨機替換！
+Explodes the player if they don’t move for one second. Pure chaos. 不要停下移動！停下超過 1 秒就會自爆！
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.chaosgear]] #optional
+[[dependencies.nomoveexplode]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -60,7 +60,7 @@ Every 15 seconds, your gear and tools are replaced with random stuff. 每 15 秒
     # Side this dependency is applied on - BOTH, CLIENT, or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.chaosgear]]
+[[dependencies.nomoveexplode]]
     modId="minecraft"
     mandatory=true
     # This version range declares a minimum of the current minecraft version up to but not including the next major version

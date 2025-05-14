@@ -1,4 +1,4 @@
-package com.leslie121224.chaosgear;
+package com.leslie121224.nomoveexplode;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.*;
