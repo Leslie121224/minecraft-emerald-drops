@@ -18,11 +18,11 @@ license="MIT"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId="nomoveexplode" #mandatory
+modId="cursedweather" #mandatory
 # The version number of the mod
 version="1.0.0" #mandatory
 # A display name for the mod
-displayName="Move or Explode" #mandatory
+displayName="Cursed Weather" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -43,10 +43,10 @@ authors="Leslie121224" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Explodes the player if they don’t move for one second. Pure chaos. 不要停下移動！停下超過 1 秒就會自爆！
+Disasters happen every 5 minutes. 每 5 分鐘世界會發生災難，每次睡覺都可能是最後一次。
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.nomoveexplode]] #optional
+[[dependencies.cursedweather]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
