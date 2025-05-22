@@ -8,21 +8,32 @@ import java.util.Random;
 
 public class DisasterManager {
     private static final DisasterType[] TYPES = DisasterType.values();
+    private static DisasterType next = null;
     private static DisasterType current = null;
 
     public static void sendWarning(ServerLevel level) {
-        DisasterType next = getRandomDisaster();
+        next = getRandomDisaster();
+
         for (Player player : level.players()) {
             player.displayClientMessage(
                 Component.literal("災難即將來襲！Disaster incoming!"),
                 false
             );
         }
-        current = next;
+    }
+
+    public static void clearAllDisasters() {
+        AcidRainHandler.disable();
+        TimeDistortionHandler.disable();
+        NetherfallHandler.disable();
     }
 
     public static void triggerRandomDisaster(ServerLevel level) {
+        clearAllDisasters();
+
+        current = next;
         if (current == null) current = getRandomDisaster();
+        next = null;
 
         for (Player player : level.players()) {
             player.displayClientMessage(
@@ -32,7 +43,6 @@ public class DisasterManager {
         }
 
         current.run(level);
-        current = null;
     }
 
     private static DisasterType getRandomDisaster() {

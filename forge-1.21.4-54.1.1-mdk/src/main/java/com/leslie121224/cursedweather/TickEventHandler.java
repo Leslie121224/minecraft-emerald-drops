@@ -1,13 +1,16 @@
 package com.leslie121224.cursedweather.event;
 
 import com.leslie121224.cursedweather.disaster.DisasterManager;
+import com.leslie121224.cursedweather.disaster.AcidRainHandler;
+import com.leslie121224.cursedweather.disaster.TimeDistortionHandler;
+import com.leslie121224.cursedweather.disaster.NetherfallHandler;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class TickEventHandler {
-    private static final int DISASTER_INTERVAL = 6000; // 5分鐘
-    private static final int WARNING_OFFSET = 300;     // 30秒前警告
+    private static final int DISASTER_INTERVAL = 20 * 6 * 5; // 每 5 分鐘觸發災難 // test
+    private static final int WARNING_OFFSET = DISASTER_INTERVAL - 20 * 15; // 15 秒前警告
 
     @SubscribeEvent
     public void onServerTick(TickEvent.ServerTickEvent event) {
@@ -23,6 +26,10 @@ public class TickEventHandler {
             if (time == 0) {
                 DisasterManager.triggerRandomDisaster(level);
             }
+
+            AcidRainHandler.tick(level);
+            TimeDistortionHandler.tick(level);
+            NetherfallHandler.tick(level);
         }
     }
 }
