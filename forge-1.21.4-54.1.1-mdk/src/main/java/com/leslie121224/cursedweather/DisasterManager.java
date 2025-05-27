@@ -16,7 +16,7 @@ public class DisasterManager {
 
         for (Player player : level.players()) {
             player.displayClientMessage(
-                Component.literal("災難即將來襲！Disaster incoming!"),
+                Component.literal("有什麼要來了... Something is incoming..."),
                 false
             );
         }
@@ -31,9 +31,7 @@ public class DisasterManager {
     public static void triggerRandomDisaster(ServerLevel level) {
         clearAllDisasters();
 
-        current = next;
-        if (current == null) current = getRandomDisaster();
-        next = null;
+        current = getRandomDisaster();
 
         for (Player player : level.players()) {
             player.displayClientMessage(

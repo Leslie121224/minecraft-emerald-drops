@@ -12,7 +12,7 @@ public enum DisasterType {
     SKY_COLLAPSE("天空崩潰", "SKY COLLAPSE") {
         @Override
         public void run(ServerLevel level) {
-            level.setWeatherParameters(0, 6000, true, true);
+            level.setWeatherParameters(0, 1200, true, true);
             level.setDayTime(13000); // 切夜晚
         }
     },
@@ -20,7 +20,8 @@ public enum DisasterType {
     ACID_RAIN("酸雨", "ACID RAIN") {
         @Override
         public void run(ServerLevel level) {
-            level.setWeatherParameters(0, 6000, true, false); // 下雨
+            level.setWeatherParameters(0, 1200, true, false);
+            level.setRainLevel(1.0F); // isRainingAt 成立
             AcidRainHandler.enable();
         }
     },
@@ -28,7 +29,7 @@ public enum DisasterType {
     NETHERFALL("地獄降臨", "NETHERFALL") {
         @Override
         public void run(ServerLevel level) {
-            level.setWeatherParameters(0, 6000, false, true); // 打雷但不下雨
+            level.setWeatherParameters(0, 1200, false, true); // 打雷但不下雨
             NetherfallHandler.enable();
         }
     },

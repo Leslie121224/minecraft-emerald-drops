@@ -9,8 +9,8 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class TickEventHandler {
-    private static final int DISASTER_INTERVAL = 20 * 6 * 5; // 每 5 分鐘觸發災難 // test
-    private static final int WARNING_OFFSET = DISASTER_INTERVAL - 20 * 15; // 15 秒前警告
+    private static final int DISASTER_INTERVAL = 20 * 6 * 1; // 每 5 分鐘觸發災難 // test
+    private static final int WARNING_OFFSET = DISASTER_INTERVAL - 20 * 10; // 15 秒前警告
 
     @SubscribeEvent
     public void onServerTick(TickEvent.ServerTickEvent event) {

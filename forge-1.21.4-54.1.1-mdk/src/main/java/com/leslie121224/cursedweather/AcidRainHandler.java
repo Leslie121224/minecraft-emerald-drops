@@ -21,13 +21,9 @@ public class AcidRainHandler {
     public static void tick(ServerLevel level) {
         if (!active) return;
 
-        tickCounter++;
-        if (tickCounter < 20) return; // 每 1 秒觸發一次
-        tickCounter = 0;
-
         for (Player player : level.players()) {
             if (level.isRainingAt(player.blockPosition())) {
-                player.addEffect(new MobEffectInstance(MobEffects.POISON, 20 * 2, 0));
+                player.addEffect(new MobEffectInstance(MobEffects.POISON, 40, 1)); // 2 秒毒，等級 2
             }
         }
     }

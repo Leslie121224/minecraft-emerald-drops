@@ -31,7 +31,7 @@ public class NetherfallHandler {
                 double py = player.getY();
                 double pz = player.getZ();
 
-                int radius = 16; // 半徑16 = 直徑32
+                int radius = 32; // 半徑32 = 直徑64
                 int count = 40; // 每秒掉 40 顆火球
 
                 for (int i = 0; i < count; i++) {
